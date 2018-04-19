@@ -1,0 +1,103 @@
+body {
+	background-color: #A5D6A7;
+}
+
+.button {
+	width: 230px;
+	height: 35px;
+	background-color: #BDBDBD;
+	border: none;
+	padding: 10px 15px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 4px 2px;
+}
+
+.button-list-available {
+	width: 140px;
+	color: green;
+}
+
+.button-list-unavailable {
+	width: 140px;
+	color: red;
+}
+
+.help-block {
+	background-color: red;
+}
+
+.edittext {
+	width: 210px;
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 12px;
+	margin: 4px 2px;
+	text-transform: capitalize;
+}
+
+p {
+	text-align: center;
+	background-color: #fff;
+	padding: 5px;
+	border-radius: 1em;
+}
+
+a {
+	width: 200px;
+	height: 40px;
+	background-color: #fff;
+	padding: 5px;
+	border-radius: 1em;
+}
+
+.button {
+	width: 230px;
+	padding: 10px 15px;
+	background-color: #BDBDBD;
+	border: none;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	margin: 4px 2px;
+}
+
+#top {
+	width: 200px;
+	height: 40px;
+	background-color: #fff;
+	padding: 5px;
+	border-radius: 1em;
+}
+
+#main {
+	text-align: center;
+	background-color: #fff;
+	padding: 50px;
+	border-radius: 1em;
+	width: 350px;
+	margin: 5em auto;
+}
+
+#maintwo {
+	background-color: #fff;
+	padding: 50px;
+	border-radius: 1em;
+	width: 380px;
+	margin: 5em auto;
+}
+
+table, th, td {
+	padding: 5px;
+	border: 1px solid black;
+}
+
+#mainthree {
+	text-align: center;
+	background-color: #fff;
+	padding: 50px;
+	border-radius: 1em;
+	width: 250px;
+	margin: 5em auto;
+}

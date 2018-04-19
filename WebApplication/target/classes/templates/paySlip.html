@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="main.css"></link>
+<meta charset="UTF-8"></meta>
+<title>Pay Slip</title>
+</head>
+<body>
+	<p>Your Pay Slip</p>
+	<hr></hr>
+	<div id="top">
+		<a href="logoutPage.html"> Logout Page</a>
+		<br></br>
+		Logged in as <label th:text="${employee}"></label>
+	</div>
+	
+	<div id="main">
+			<table>
+				<tr>
+					<!--  <th> <%=session.getAttribute("user") %></th>-->
+					<th th:text="${employee}"></th>
+					<th> </th>
+					<!--  <th> <%=request.getAttribute("month") %></th>-->
+					<th th:text="${month}"></th>
+					<th> </th>
+				</tr>
+				<tr>
+					<td>Hours Worked</td>
+					<!--  <td><%=request.getAttribute("hoursWorked") %></td>-->
+					<th th:text="${hoursWorked}"></th>
+					<td>Overtime Worked</td>
+					<!--  <td><%=request.getAttribute("overtimeWorked") %></td>-->
+					<th th:text="${overtimeWorked}"></th>
+				</tr>
+			
+				<tr>
+					<td>Base Pay</td>
+					<!--  <td><%=request.getAttribute("base") %></td>-->
+					<th th:text="${base}"></th>
+					<td>Overtime Pay</td>
+					<!--  <td><%=request.getAttribute("overtime") %></td>-->
+					<th th:text="${overtime}"></th>
+				</tr>
+				
+				<tr>
+					<td>Shift Allowance</td>
+					<!--  <td><%=request.getAttribute("shift") %></td>-->
+					<th th:text="${shift}"></th>
+					<td>Regularity Allowance</td>
+					<!--  <td><%=request.getAttribute("regularity") %></td>-->
+					<th th:text="${regularity}"></th>
+				</tr>
+				
+				<tr>
+					<td>Health Deduction</td>
+					<!--  <td>-<%=request.getAttribute("health") %></td>-->
+					<th th:text="${health}"></th>
+					<td>Tax</td>
+					<!--  <td>-<%=request.getAttribute("tax") %></td>-->
+					<th th:text="${tax}"></th>
+				</tr>
+				
+				<tr>
+					<td>Total Pay</td>
+					<!--  <td><%=request.getAttribute("total") %></td>-->
+					<th th:text="${total}"></th>
+					<td>Actual Pay</td>
+					<!--  <td><%=request.getAttribute("actual") %></td>-->
+					<th th:text="${actual}"></th>
+				</tr>
+			</table>
+	</div>
+	
+
+</body>
+</html>

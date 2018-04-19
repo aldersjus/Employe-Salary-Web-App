@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="main.css"></link>
+<meta charset="UTF-8"></meta>
+<title>Confirm Log Out</title>
+</head>
+<body>
+	<div id="header">
+		<p>Confirm Log Out Page</p>
+		<hr></hr>
+	</div>
+	<div id="main">
+		<form action="loggedOut" method="post">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+			<input type="submit" class="button" value="LOGOUT"></input>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" href="main.css"></link>
+<meta charset="UTF-8"></meta>
+<title>Logged in</title>	
+</head>
+<body>
+<p>Employee Pay Slip Selection Page</p>
+		<hr></hr>
+		<div id="top">
+			<a href="logoutPage.html"> Logout Page</a>
+			<br></br>
+				Logged in as <label th:text="${employee.getLink()}"></label>
+			<br></br><br></br> 
+			<br></br><br></br>
+		</div>
+		<div id="mainthree">
+			<table>
+				<tr>
+					<th>Month</th>
+					<th>Pay Slip</th>
+				</tr>
+				<th:block th:each="month : ${months}">
+							<tr>
+								<td th:text="${month}"></td>
+								<!-- Try adding links use the page redirect -->
+								<!--<td><a href=${pageContext.request.contextPath}/DisplayPayServlet?month=${months[temp-1]}>Link to pay slip</a></td>-->
+								<!--<td><a th:href="@{/paySlip(month=${month},user=${user.getUser()})}" > Link to pay slip</a></td> -->
+								<td>
+									<div>
+										<form action="paySlip" th:action="@{/paySlip(month=${month},employeeName=${employee.getLink()},user=${user.getUser()})}" th:object="${user}" method="post">
+											<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+											<input type="submit" name="pay" class="button-list-available" th:value="${month}"></input>
+										</form>
+									</div>
+								</td>
+							</tr>
+							
+							
+							
+				</th:block>
+		
+				<th:block th:each="month : ${restMonths}">
+							<tr>
+								<td th:text="${month}"></td>
+								<td>
+									<div>
+										<form action="unPaidMonth"  th:object="${user}" method="post">
+											<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+											<input type="submit" name="pay" class="button-list-unavailable" th:value="${month}"></input>
+										</form>
+									</div>
+								</td>
+							</tr>
+				</th:block>
+			</table>
+		</div>        
+</body>
+</html>

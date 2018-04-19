@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymleaf.org">
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css"></link>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+	<title>Login Page</title>
+</head>
+<body>
+	<p>Employee System was built by Justin Alderson using Java, HTML, CSS, Thymleaf, MySQL and Spring Boot</p>
+	<hr></hr>
+	<div id="main">
+		<h2>
+			<label>Employee System</label>
+		</h2>
+		
+		<form action="userPage" th:action="@{userPage}" th:object="${user}" method="post">
+			<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"></input>
+			<input type="text" name="user" th:field="*{user}" class="edittext" placeholder="Login ID"></input>
+			<br></br>
+			<br></br>
+			<p th:if="${#fields.hasErrors('user')}" th:errors="*{user}" class="help-block"></p>
+			
+			<input type="password" class="edittext" th:field="*{password}" placeholder="Password"></input>
+			<br></br>
+			<br></br>
+			<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="help-block"></p>
+			<br></br>
+			<br></br>
+			<input type="submit" name="login" class="button" value="LOGIN"></input>
+		</form>
+		<br></br>
+		<br></br>
+			Please use your employee number and the password that you were issued by the company to log in.
+	</div>
+	
+</body>
+</html>
